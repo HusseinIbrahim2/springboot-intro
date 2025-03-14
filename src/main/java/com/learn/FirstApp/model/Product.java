@@ -7,9 +7,7 @@ public class Product {
     private String description;
     private Double price;
 
-    Product() {}
-
-    Product(String name, String description, Double price) {
+    public Product(String name, String description, Double price) {
         this.name = name;
         this.description = description;
         this.price = price;

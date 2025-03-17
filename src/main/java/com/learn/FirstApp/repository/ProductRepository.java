@@ -1,10 +1,12 @@
 package com.learn.FirstApp.repository;
 
 import com.learn.FirstApp.model.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ProductRepository{
     private List<Product> list = new ArrayList<Product>();
 
@@ -19,7 +21,7 @@ public class ProductRepository{
                 .findFirst()
                 .orElse(null);
     }
-    void deleteProduct(Long id)
+    public void deleteProduct(Long id)
     {
         list.removeIf(product -> product.getId().equals(id));
     }

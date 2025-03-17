@@ -37,6 +37,10 @@ public class ProductRepository{
                         () -> { throw new RuntimeException("Product not found"); }
                 );
     }
+    public void addProduct(Product product)
+    {
+        list.add(product);
+    }
 }
 
 

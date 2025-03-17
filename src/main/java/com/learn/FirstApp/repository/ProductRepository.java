@@ -19,6 +19,10 @@ public class ProductRepository{
                 .findFirst()
                 .orElse(null);
     }
+    void deleteProduct(Long id)
+    {
+        list.removeIf(product -> product.getId().equals(id));
+    }
 }
 
 

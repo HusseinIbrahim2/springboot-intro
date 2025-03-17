@@ -12,6 +12,13 @@ public class ProductRepository{
     {
         return list;
     }
+    public Product getProductById(Long id)
+    {
+        return list.stream()
+                .filter(product -> product.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
 }
 
 

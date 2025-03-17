@@ -23,6 +23,20 @@ public class ProductRepository{
     {
         list.removeIf(product -> product.getId().equals(id));
     }
+    public void updateProduct(Product p)
+    {
+        list.stream()
+                .filter(product -> product.getId().equals(p.getId()))
+                .findFirst()
+                .ifPresentOrElse(
+                        product -> {
+                            product.setName(p.getName());
+                            product.setPrice(p.getPrice());
+                            product.setDescription(p.getDescription());
+                        },
+                        () -> { throw new RuntimeException("Product not found"); }
+                );
+    }
 }
 
 

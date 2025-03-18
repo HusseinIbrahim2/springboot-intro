@@ -32,6 +32,7 @@ public class ProductRepository{
                 .findFirst()
                 .ifPresentOrElse(
                         product -> {
+                            product.setId(p.getId());
                             product.setName(p.getName());
                             product.setPrice(p.getPrice());
                             product.setDescription(p.getDescription());

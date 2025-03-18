@@ -1,8 +1,7 @@
 package com.learn.FirstApp.model;
-import jakarta.persistence.GeneratedValue;
 
 public class Product {
-    @GeneratedValue Long id;
+    private Long id;
     private String name;
     private String description;
     private Double price;
